@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutual Funds Selection</title>
+  <style>
+    /* Smooth Gradient Background */
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+      background:linear-gradient(to right, #42275a, #734b6d),
+                  url('https://source.unsplash.com/1600x900/?finance,investment'); 
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(8px);
+      color: white;
+    }
+
+    /* Container with Blur Effect */
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 50%;
+      margin: auto;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Input and Button Styling */
+    input, button {
+      width: 90%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    input {
+      background: rgba(255, 255, 255, 0.6);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    /* Mutual Fund Box */
+    .fund-box {
+      padding: 12px;
+      margin: 10px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .fund-box:hover {
+      background: rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Enter Your Monthly Salary</h2>
+    <label for="salary">Monthly Salary ($):</label>
+    <input type="number" id="salary" value="5000">
+    
+    <button onclick="saveSalaryAndRedirect()">Continue</button>
+
+    <h3>Select a Mutual Fund</h3>
+    <div class="fund-box" onclick="redirectToFund('sbi.html')">SBI Long Term Equity Fund</div>
+    <div class="fund-box" onclick="redirectToFund('hsbc_elss.html')">HSBC ELSS Tax Saver Fund</div>
+    <div class="fund-box" onclick="redirectToFund('jm.html')">JM Flexi Cap Fund</div>
+    <div class="fund-box" onclick="redirectToFund('hsbc_flexi.html')">HSBC Flexi Cap Fund</div>
+    <div class="fund-box" onclick="redirectToFund('hdfc.html')">HDFC Focused 30 Fund</div>
+  </div>
+
+  <script>
+    function saveSalaryAndRedirect() {
+      let salary = document.getElementById('salary').value;
+      if (salary < 0) salary = 0;
+      
+      localStorage.setItem('salary', salary);
+      localStorage.setItem('investment', (salary * 0.2).toFixed(2));
+
+      alert("Salary saved! Now choose a Mutual Fund.");
+    }
+
+    function redirectToFund(page) {
+      if (!localStorage.getItem('salary')) {
+        alert("Please enter your salary first.");
+        return;
+      }
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
+
