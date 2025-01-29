@@ -1,0 +1,28 @@
+[
+    {
+      "scheme": "SBI Long Term Equity Fund",
+      "years": [1, 3, 5, 10],
+      "values": [19, 23, 23, 14]
+    },
+    {
+      "scheme": "HSBC ELSS Tax Saver Fund",
+      "years": [1, 3, 5, 10],
+      "values": [17, 16, 17, 13]
+    },
+    {
+      "scheme": "JM Flexi Cap Fund",
+      "years": [1, 3, 5, 10],
+      "values": [19, 24, 23, 16]
+    },
+    {
+      "scheme": "HSBC Flexi Cap Fund",
+      "years": [1, 3, 5, 10],
+      "values": [14, 15, 18, 12]
+    },
+    {
+      "scheme": "HDFC Focused 30 Fund",
+      "years": [1, 3, 5, 10],
+      "values": [20, 27, 23, 14]
+    }
+  ]
+  
